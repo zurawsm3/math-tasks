@@ -1,0 +1,1 @@
+File mathjax/tex-svg.js was taken from mathjax-full node package. That file was in bundle directory. 
