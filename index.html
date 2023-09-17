@@ -9,11 +9,9 @@
         <script src="/mathjax/tex-svg.js" id="MathJax-script" async></script>
 
         <script>
-            Das = {a:1}
             MathJax = {
                 loader: {
-                    // load: ['[img]/img.min.js', '[tex]/textmacros'],
-                    load: ['[img]/img.min.js'],
+                    load: ['[img]/img.min.js', '[tex]/textmacros'],
                     paths: {img: 'https://cdn.jsdelivr.net/npm/mathjax-img@3'}
                 },
                 tex: {
@@ -35,15 +33,16 @@
             <h1>MathJax v4: TeX to SVG</h1>
             
             <textarea id="input" rows="15" cols="10" oninput="convert()">
-\img[width=90pt,height=90pt][alttext]{test3.jpg}
-x = {-b \pm \sqrt{b^2-4ac} \over 2a}.test
-
-\begin{array}{c|lcr}
-n & \text{Left} & \text{Center} & \text{Right} \\
-\hline
-1 & 0.24 & 1 & 125 \\
-2 & -1 & 189 & -8 \\
-3 & -20 & 2000 & 1+10i
+\text{1-st case. Bottom alignment not works} \\
+\begin{array}[b]{lc}
+\text{Lorem ipsum dolor sit amet, consectetur$\\$adipiscing elit. Nullam consectetur dapibus $\\$ursus. Orci varius natoque penatibus et magnis } & re
+\end{array}
+\\
+\\
+\\
+\text{2-st case. Top alignment not works} \\
+\begin{array}[t]{cc}
+tralala & \img[width=90pt,height=90pt][alttext]{test3.jpg}
 \end{array}
             </textarea>
             <br>
