@@ -22,6 +22,8 @@ function convert() {
   MathJax.texReset();
   var options = MathJax.getMetricsFor(output);
   options.display = display.checked;
+  // console.log(options);
+  console.log(MathJax, "MATHJAX");
   MathJax.tex2svgPromise(input, options).then(function (node) {
     //
     //  The promise returns the typeset node, which we add to the output

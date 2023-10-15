@@ -11,12 +11,11 @@
         <script>
             MathJax = {
                 loader: {
-                    load: ['[img]/img.min.js', '[tex]/textmacros'],
-                    paths: {img: 'https://cdn.jsdelivr.net/npm/mathjax-img@3'}
+                    load: ['[tex]/textmacros', '[tex]/texhtml'],
                 },
                 tex: {
-                    packages: {'[+]': ['img']}
-                    // packages: {'[+]': ['img', 'textmacros']}
+                    allowTexHTML: true,
+                    packages: {'[+]': ['texhtml']}
                 }
             };
         </script>
@@ -33,17 +32,16 @@
             <h1>MathJax v4: TeX to SVG</h1>
             
             <textarea id="input" rows="15" cols="10" oninput="convert()">
-\text{1-st case. Bottom alignment not works} \\
-\begin{array}[b]{lc}
-\text{Lorem ipsum dolor sit amet, consectetur$\\$adipiscing elit. Nullam consectetur dapibus $\\$ursus. Orci varius natoque penatibus et magnis } & re
-\end{array}
-\\
-\\
-\\
-\text{2-st case. Top alignment not works} \\
-\begin{array}[t]{cc}
-tralala & \img[width=90pt,height=90pt][alttext]{test3.jpg}
-\end{array}
+\begin{array}{|c|c|}
+<tex-html>
+    <p style="text-align:justify; background-color: red; white-space: pre-line; max-width: 15em;">Rzucamy złotówką, dwuzłotówką i pięciozłotówką. Jakie jest prawdopodobieństwo tego, że na wszystkich trzech monetach wypadnie reszka?
+    </p>
+</tex-html>
+&
+<tex-html>
+    <img src="test3.jpg" width="100" height="140">
+</tex-html>
+\end{array}      
             </textarea>
             <br>
             <div class="left">
